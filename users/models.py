@@ -7,6 +7,8 @@ class UserType(models.TextChoices):
     ASSOCIADO = 'ASSOCIADO', 'Associado'
     AFILIADO = 'AFILIADO', 'Afiliado'
     COLETIVO = 'COLETIVO', 'Coletivo'
+    PUBLICO = 'PUBLICO', 'Público'
+    
     
 class UserManager(BaseUserManager):
     """
