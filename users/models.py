@@ -77,31 +77,6 @@ class User(AbstractBaseUser, PermissionsMixin):
         max_length=50,
         blank=True,
         help_text='Nick do Discord do usuário.' 
-        )
-    cep = models.CharField(
-        max_length=9,
-        help_text='CEP do endereço do usuário.'
-        )
-    numero = models.CharField(
-        max_length=10,
-        help_text='Número do endereço do usuário.'
-        )
-    complemento = models.CharField(
-        max_length=50,
-        blank=True, 
-        help_text='Complemento do endereço do usuário.'
-        )
-    bairro = models.CharField(
-        max_length=50,
-        help_text='Bairro do endereço do usuário.'
-        )
-    cidade = models.CharField(
-        max_length=50,
-        help_text='Cidade do endereço do usuário.'
-        )
-    estado = models.CharField(
-        max_length=2,
-        help_text='Estado do endereço do usuário .'
         ) 
     
     tipo_usuario = models.CharField(
