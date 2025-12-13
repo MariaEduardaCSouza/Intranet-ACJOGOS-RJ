@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Login - Intranet{% endblock %}
+
+{% block content %}
+    <div style="max-width: 400px; margin: 0 auto;">
+        <h2>Login</h2>
+        
+        {% if form.errors %}
+            <p style="color: red; background: #ffebee; padding: 10px; border-radius: 5px;">
+                E-mail ou senha incorretos.
+            </p>
+        {% endif %}
+
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" style="padding: 10px 20px; cursor: pointer;">Entrar</button>
+        </form>
+        
+        <br>
+        <p>Não tem conta? <a href="#">Cadastre-se aqui</a></p>
+    </div>
+{% endblock %}
