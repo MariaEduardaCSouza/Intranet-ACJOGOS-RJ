@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Início - Intranet{% endblock %}
+
+{% block content %}
+<div style="padding: 20px;">
+    <h1>Bem-vindo, {{ user.nome }}!</h1>
+    <p>Você está logado na Intranet da ACJOGOS-RJ.</p>
+    
+    <hr>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 20px;">
+        <div style="border: 1px solid #ccc; padding: 20px; border-radius: 8px; background: white;">
+            <h3>Meus Dados</h3>
+            <p><strong>Email:</strong> {{ user.email }}</p>
+            <p><strong>Perfil:</strong> {{ user.get_tipo_usuario_display }}</p> </div>
+
+        <div style="border: 1px solid #ccc; padding: 20px; border-radius: 8px; background: white;">
+            <h3>Avisos</h3>
+            <p>Nenhum aviso novo por enquanto.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
