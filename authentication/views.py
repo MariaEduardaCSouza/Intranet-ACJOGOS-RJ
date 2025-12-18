@@ -12,7 +12,11 @@ def login_view(request):
         if user:
             login(request, user)
             return redirect('home')  #Ajustar depois para a página inicial correta
-        else:
-            context = {'error': 'E-mail ou senha inválidos.'}
-            return render(request, 'authentication/login.html', context)
-        
+    return render(request, 'login.html')
+                   
+def logout_view(request):
+    '''
+    view responsável por deslogar usuários da plataforma.
+    '''
+    logout(request)
+    return redirect('login')
