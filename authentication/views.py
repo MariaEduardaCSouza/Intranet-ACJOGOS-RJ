@@ -9,10 +9,14 @@ def login_view(request):
         email = request.POST.get('email')
         password = request.POST.get('password')
         user = authenticate(request, username=email, password=password)
+        
         if user:
             login(request, user)
             return redirect('home')  #Ajustar depois para a página inicial correta
-    return render(request, 'login.html')
+        return render(
+            request, 'login.html',
+            {'error': 'E-mail ou senha inválidos.'}
+        )
                    
 def logout_view(request):
     '''
