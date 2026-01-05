@@ -3,6 +3,10 @@ from django.contrib.auth.models import (AbstractBaseUser, PermissionsMixin, Base
 )
 
 class UserType(models.TextChoices):
+    '''
+    Tipode usuário na plataforma.
+    Ultilizado para definir permissões e acesso a funcionalidades.
+    '''
     DIRETORIA = 'DIRETORIA', 'Diretoria'
     ASSOCIADO = 'ASSOCIADO', 'Associado'
     AFILIADO = 'AFILIADO', 'Afiliado'
@@ -85,7 +89,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         default=UserType.PUBLICO,
         help_text='Tipo do usuário na plataforma.'
         )
-    
+    #campos de controle
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     date_joined = models.DateTimeField(auto_now_add=True)   
