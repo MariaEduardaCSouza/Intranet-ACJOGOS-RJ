@@ -16,9 +16,21 @@
             <p><strong>Perfil:</strong> {{ user.get_tipo_usuario_display }}</p> </div>
 
         <div style="border: 1px solid #ccc; padding: 20px; border-radius: 8px; background: white;">
-            <h3>Avisos</h3>
-            <p>Nenhum aviso novo por enquanto.</p>
-        </div>
-    </div>
+    <h3>Área do Usuário</h3>
+
+    {% if user.tipo_usuario == 'DIRETORIA' %}
+        <p>Acesso completo ao sistema.</p>
+        <p>Você pode visualizar relatórios, empresas e projetos.</p>
+
+    {% elif user.tipo_usuario == 'ASSOCIADO' %}
+        <p>Acesso à área da sua empresa.</p>
+        <p>Gerencie seus projetos e informações.</p>
+
+    {% elif user.tipo_usuario == 'AFILIADO' %}
+        <p>Acesso ao seu perfil profissional.</p>
+        <p>Atualize seus dados e acompanhe oportunidades.</p>
+
+    {% else %}
+        <p>Acesso limitado.</p>
+    {% endif %}
 </div>
-{% endblock %}
