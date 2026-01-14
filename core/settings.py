@@ -128,6 +128,7 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+LOGIN_URL = '/auth/login/'
 # Redireciona para a página inicial ('/') após o login com sucesso
 LOGIN_REDIRECT_URL = '/'
 
